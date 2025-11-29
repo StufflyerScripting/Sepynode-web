@@ -40,6 +40,13 @@ main {
   flex: 1;
   padding: 2rem;
 }
+
+pre {
+  background: #f0f0f0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
 .page {
   display: none;
   animation: fadeIn 0.3s ease-in-out;
