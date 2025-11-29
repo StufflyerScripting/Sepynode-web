@@ -41,6 +41,74 @@ main {
   padding: 2rem;
 }
 
+    nav a {
+      color: #00aaff;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .container {
+      display: flex;
+      gap: 2rem;
+    }
+
+    aside {
+      position: sticky;
+      top: 1rem;
+      max-width: 220px;
+      flex-shrink: 0;
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      height: fit-content;
+    }
+
+    aside input {
+      width: 100%;
+      padding: 0.4rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    aside ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    aside li {
+      margin-bottom: 0.5rem;
+    }
+
+    aside a {
+      color: #00c0ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    aside a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      margin-top: 0;
+    }
+
 pre {
   background: #f0f0f0;
   padding: 0.75rem;
