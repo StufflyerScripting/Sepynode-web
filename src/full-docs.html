@@ -22,6 +22,11 @@
         <li><a href="#syntax">Syntax Basics</a></li>
         <li><a href="#variables">Variables</a></li>
         <li><a href="#functions">Functions</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#printing">Printing & Colors</a></li>
+        <li><a href="#loops">Loops</a></li>
+        <li><a href="#imports">Imports</a></li>
+        <li><a href="#dll">DLL Interfacing</a></li>
       </ul>
     </aside>
 
@@ -34,23 +39,87 @@
       <section id="syntax">
         <h2>Syntax Basics</h2>
         <pre><code>var name = "World";
-print >> "Hello " + name;
-println >> "Printing in Sepynode is Cool!" c< 4;</code></pre>
-		<br>
-		<p>All the lines in Sepynode are followed by ;</p>
-		<br>
-		<p><code>print</code> and <code>println</code> are used to print a line to the terminal</p>
+print << "Hello " + name;
+println << "Printing in Sepynode is Cool!" c< 4;</code></pre>
+        <p>All lines in Sepynode end with a semicolon <code>;</code>.</p>
+        <p><code>print</code> writes text without a newline, while <code>println</code> appends a newline.</p>
       </section>
 
       <section id="variables">
         <h2>Variables</h2>
-        <p>Variables are declared using <code>var</code>. They are dynamically typed and scoped to their block.</p>
+        <p>Variables are declared using <code>var</code>. They have no fixed type and are scoped to their function or block.</p>
+        <pre><code>var x = 10;
+var message = "Hello";
+var result = x + 20;</code></pre>
       </section>
 
       <section id="functions">
         <h2>Functions</h2>
-        <pre><code>def greet(person):
-  print >> "Hello " + person;</code></pre>
+        <p>Functions are declared using <code>func</code>.</p>
+        <pre><code>func greet(var person){
+    println << "Hello " + person c< 2;
+}
+
+greet("Sepynode");</code></pre>
+      </section>
+
+      <section id="classes">
+        <h2>Classes</h2>
+        <p>Sepynode supports simple classes with constructors and member functions.</p>
+        <pre><code>class Test{
+    var value = 100;
+
+    operator INIT(var number=1000){
+        println << "Initialized with: " << number c< 4;
+    }
+
+    func setValue(var v){
+        value = v;
+    }
+}
+
+var t = Test(10);
+t.setValue(500);
+println << t.value c< 3;</code></pre>
+      </section>
+
+      <section id="printing">
+        <h2>Printing & Colors</h2>
+        <p>Sepynode uses a unique C++-like stream operator syntax for printing.</p>
+        <pre><code>println << "Yellow, " c< 3 << "Red, " c< 1 << "Green!" c< 2;</code></pre>
+        <p>Color codes:</p>
+        <pre><code>0 grey
+1 red
+2 green
+3 yellow
+4 blue
+5 purple
+6 teal
+7 white</code></pre>
+      </section>
+
+      <section id="loops">
+        <h2>Loops</h2>
+        <pre><code>var i = 0;
+while(i != 10){
+    println << "i = " << i c< 4;
+    i = i + 1;
+}</code></pre>
+      </section>
+
+      <section id="imports">
+        <h2>Imports</h2>
+        <pre><code>import "imports/itest.spn";
+printmsg();</code></pre>
+        <p>Imported files can define functions that become available globally.</p>
+      </section>
+
+      <section id="dll">
+        <h2>DLL Interfacing</h2>
+        <p>Sepynode can dynamically load DLLs and execute exported functions.</p>
+        <pre><code>var stddll = LOADDLIB "./../stdlib/stdlib.dll";
+EXECDLIBFUNC stddll "type" 10;
+println << "Result: " << ExecFunctionReturnVar c< 4;</code></pre>
       </section>
     </main>
   </div>
