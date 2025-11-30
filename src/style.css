@@ -78,6 +78,135 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+/* --- Layout for container, aside and main --- */
+.container {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+aside {
+  width: 250px;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+aside input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+/* --- Sidebar navigation --- */
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  margin: 0.5rem 0;
+}
+
+aside a {
+  text-decoration: none;
+  color: #1e1e2f;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+aside a:hover {
+  color: #00c0ff;
+}
+
+/* --- Main documentation styling --- */
+main#docs {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+main section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+pre code {
+  background: #f0f0f0;
+  display: block;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: "Consolas", monospace;
+  font-size: 0.95rem;
+  color: #333;
+  border-left: 4px solid #00c0ff;
+  overflow-x: auto;
+}
+
+code {
+  background: #eaeaea;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-family: "Consolas", monospace;
+  font-size: 0.9rem;
+}
+
+a {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  background: #00c0ff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.1s;
+  display: inline-block;
+}
+
+nav a:hover {
+  background: #0088cc;
+}
+
+nav a:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    position: static;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
