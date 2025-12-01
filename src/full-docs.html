@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sepynode - Full Documentation</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo2.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="logo_dark.png" media="(prefers-color-scheme: light)">
 </head>
+
 <body>
   <header>
     <h1>Sepynode Documentation</h1>
@@ -42,12 +46,14 @@
 print << "Hello " + name;
 println << "Printing in Sepynode is Cool!" c< 4;</code></pre>
         <p>All lines in Sepynode end with a semicolon <code>;</code>.</p>
-        <p><code>print</code> writes text without a newline, while <code>println</code> appends a newline.</p>
+        <p><code>print</code> writes text without a newline, while <code>println</code> appends a newline. You will
+          learn about the <code>c< 4</code> soon.</code></p>
       </section>
 
       <section id="variables">
         <h2>Variables</h2>
-        <p>Variables are declared using <code>var</code>. They have no fixed type and are scoped to their function or block.</p>
+        <p>Variables are declared using <code>var</code>. They have no fixed type and are scoped to their function or
+          block.</p>
         <pre><code>var x = 10;
 var message = "Hello";
 var result = x + 20;</code></pre>
@@ -61,33 +67,41 @@ var result = x + 20;</code></pre>
 }
 
 greet("Sepynode");</code></pre>
+        <p>Functions can take parameters and can return values.</p>
+        <pre><code>func sum(var num1, var num2){
+    return num1 + num2;
+}
+
+sum(6, 7);</code></pre>
       </section>
 
       <section id="classes">
         <h2>Classes</h2>
         <p>Sepynode supports simple classes with constructors and member functions.</p>
-        <pre><code>class Test{
-    var value = 100;
+        <pre><code>class Player{
+    var health = 100;
 
     operator INIT(var number=1000){
-        println << "Initialized with: " << number c< 4;
+        number = heatlh;
+        println << "A new player spawned with the name" c< 4;
     }
 
-    func setValue(var v){
-        value = v;
+    func hit(var damage){
+        health -= damage;
     }
 }
 
-var t = Test(10);
-t.setValue(500);
-println << t.value c< 3;</code></pre>
+var gamer = Player(100);
+gamer.hit(20);</code></pre>
+        <p>Classes can have member variables and functions, and support constructors via the <code>INIT</code> operator.
+        </p>
       </section>
 
       <section id="printing">
         <h2>Printing & Colors</h2>
         <p>Sepynode uses a unique C++-like stream operator syntax for printing.</p>
         <pre><code>println << "Yellow, " c< 3 << "Red, " c< 1 << "Green!" c< 2;</code></pre>
-        <p>Color codes:</p>
+        <p>Everything about color codes can be found <a href="color-codes.html">here</a></p>
         <pre><code>0 grey
 1 red
 2 green
@@ -141,4 +155,5 @@ println << "Result: " << ExecFunctionReturnVar c< 4;</code></pre>
     });
   </script>
 </body>
+
 </html>
