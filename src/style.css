@@ -1,10 +1,9 @@
-/* RESET */
+/* Reset & basic styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
@@ -15,7 +14,9 @@ body {
   min-height: 100vh;
 }
 
-/* ---------------------- HEADER --------------------- */
+anchor {
+   font-family: 'Segoe UI', sans-serif;
+}
 
 header {
   background: #1e1e2f;
@@ -24,73 +25,40 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* <— enables wrapping on phones */
-  gap: 1rem;
 }
-
 header h1 {
   font-size: 1.8rem;
-  white-space: nowrap;
 }
-
-/* NAVIGATION */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
 nav button {
-  background: #00c0ff;
+  background: transparent;
   border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
   color: white;
   font-size: 1rem;
+  margin-left: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
-  white-space: nowrap;
+  transition: color 0.3s;
 }
-
 nav button:hover {
-  background: #0088cc;
+  color: #00c0ff;
 }
-
-/* Make nav horizontally scrollable on very small screens */
-@media (max-width: 480px) {
-  nav {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 0.3rem;
-    scrollbar-width: none;
-  }
-  nav::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-/* --------------------- PAGES ---------------------- */
-
 main {
   flex: 1;
-  padding: 2rem 1.4rem;
-  max-width: 900px;
-  width: 100%;
-  margin: auto;
+  padding: 2rem;
 }
 
+pre {
+  background: #f0f0f0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
 .page {
   display: none;
   animation: fadeIn 0.3s ease-in-out;
 }
-
 .page.active {
   display: block;
 }
-
-/* ---------------------- DOWNLOAD BUTTONS ---------------------- */
-
 .download-btn {
   display: inline-block;
   margin-top: 1rem;
@@ -100,20 +68,84 @@ main {
   text-decoration: none;
   border-radius: 5px;
   transition: background 0.3s;
-  white-space: nowrap;
 }
-
 .download-btn:hover {
   background-color: #0088cc;
 }
+footer {
+  background: #1e1e2f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+/* --- Layout for container, aside and main --- */
+.container {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
 
-/* ---------------------- CODE BLOCKS ---------------------- */
+aside {
+  width: 250px;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
 
-pre {
-  background: #f0f0f0;
-  padding: 0.75rem;
-  border-radius: 4px;
-  overflow-x: auto;
+aside input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+/* --- Sidebar navigation --- */
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  margin: 0.5rem 0;
+}
+
+aside a {
+  text-decoration: none;
+  color: #1e1e2f;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+aside a:hover {
+  color: #00c0ff;
+}
+
+/* --- Main documentation styling --- */
+main#docs {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+main section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.hidden {
+  display: none;
 }
 
 pre code {
@@ -136,77 +168,46 @@ code {
   font-size: 0.9rem;
 }
 
-/* ---------------------- FOOTER ---------------------- */
-
-footer {
-  background: #1e1e2f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+a {
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* ---------------------- SIDEBAR (DOCS PAGE ONLY) ---------------------- */
-
-.container {
+nav {
   display: flex;
-  width: 100%;
-  min-height: calc(100vh - 160px);
-  padding: 1rem 0;
-  gap: 2rem;
+  align-items: center;
 }
 
-aside {
-  width: 250px;
-  background: #ffffff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  height: fit-content;
-  position: sticky;
-  top: 1rem;
-}
-
-aside input {
-  width: 100%;
-  padding: 0.6rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-}
-
-aside ul {
-  list-style: none;
-}
-
-aside li {
-  margin: 0.5rem 0;
-}
-
-aside a {
+nav a {
+  background: #00c0ff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
-  color: #1e1e2f;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: background 0.3s, transform 0.1s;
+  display: inline-block;
 }
 
-aside a:hover {
-  color: #00c0ff;
+nav a:hover {
+  background: #0088cc;
 }
 
-/* Responsive docs layout */
+nav a:active {
+  transform: scale(0.97);
+}
+
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
   }
+
   aside {
     width: 100%;
     position: static;
   }
 }
 
-/* FADE ANIMATION */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
