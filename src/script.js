@@ -1,11 +1,10 @@
-function showPage(page) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
 
-    if (page === 'about') {
-        document.getElementById('about').classList.add('active');
-        document.getElementById('why-spn').classList.add('active');
-        document.getElementById('story').classList.add('active');
-    } else {
-        document.getElementById(page).classList.add('active');
-    }
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(pageId).classList.add('active');
+    document.getElementById('btn-' + pageId).classList.add('active');
 }
