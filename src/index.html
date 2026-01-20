@@ -10,55 +10,54 @@
 </head>
 <body>
     <header>
-        <h1>Sepynode</h1>
-        <nav>
-            <button onclick="showPage('about')">About</button>
-            <button onclick="showPage('docs')">Documentation</button>
-            <button onclick="showPage('download')">Download</button>
-        </nav>
+        <div class="header-container">
+            <h1>Sepynode</h1>
+            <nav>
+                <button onclick="showPage('about')" class="active" id="btn-about">About</button>
+                <button onclick="showPage('docs')" id="btn-docs">Documentation</button>
+                <button onclick="showPage('download')" id="btn-download">Download</button>
+            </nav>
+        </div>
     </header>
-
     <main>
-        <section id="about" class="page active">
-            <h2>About Sepynode</h2>
-            <p>Sepynode is a powerful and friendly programming language developed for learning and building cool stuff.
-            </p>
-        </section>
-        <section id="why-spn" class="page active">
-            <h2>Why use Sepynode?</h2>
-            <li>Fast, easy to learn</li>
-            <li>Free, open source</li>
-            <li>Wide, expandable</li>
-            <li>Huge friendly Dev Community :)</li>
-        </section>
-        <section id="story" class="page active">
-            <h2>The Story of Sepynode</h2>
-            <p>Sepynode was originally created in July 2023 by SpottedZulu, a teenager.
-                Back then the compiler was written in Python, after ImStufflyer, another teenager joining the project, the compiler was
-                completly rewritten in C++ for optimization and speed.
-            </p>
-        </section>
-
-        <section id="docs" class="page">
-            <h2>Documentation</h2>
-            <p>We’re working hard on the documentation. For now, check out the full documentation below:</p>
-            <a href="full-docs.html" class="download-btn">View Full Documentation</a>
-        </section>
-
-        <section id="download" class="page">
-            <h2>Download</h2>
-            <p>Get the latest version of Sepynode below:</p>
-            <a href="" class="download-btn">Download Latest Version</a>
-            <p style="margin-top: 1rem;">Looking for older versions?</p>
-            <a href="olderversions.html" class="download-btn">Older Versions</a>
-        </section>
+        <div id="about" class="page active">
+            <section>
+                <h2>About Sepynode</h2>
+                <p>Sepynode is a powerful and friendly programming language developed for learning and building cool stuff.</p>
+            </section>
+            <section>
+                <h2>Why use Sepynode?</h2>
+                <ul>
+                    <li>Fast, easy to learn</li>
+                    <li>Free, open source</li>
+                    <li>Wide, expandable</li>
+                    <li>Huge friendly Dev Community :)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>The Story of Sepynode</h2>
+                <p>Sepynode was originally created in July 2023 by SpottedZulu, a teenager. Back then the compiler was written in Python. After ImStufflyer, another teenager, joined the project, the compiler was completely rewritten in C++ for optimization and speed.</p>
+            </section>
+        </div>
+        <div id="docs" class="page">
+            <section>
+                <h2>Documentation</h2>
+                <p>We're working hard on the documentation. For now, check out the full documentation below:</p>
+                <a href="full-docs.html" class="download-btn">View Full Documentation</a>
+            </section>
+        </div>
+        <div id="download" class="page">
+            <section>
+                <h2>Download</h2>
+                <p>Get the latest version of Sepynode below:</p>
+                <a href="" class="download-btn">Download Latest Version</a>
+                <p style="margin-top: 1.5rem;">Looking for older versions?</p>
+                <a href="olderversions.html" class="download-btn">Older Versions</a>
+            </section>
+        </div>
     </main>
-
     <footer>
         <p>&copy; 2025 Sepynode Team.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
