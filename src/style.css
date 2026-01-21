@@ -1,3 +1,4 @@
+/* Reset & basic styling */
 * {
   margin: 0;
   padding: 0;
@@ -51,6 +52,19 @@ nav button.active {
   background: #00c0ff;
   border-color: #00c0ff;
 }
+nav a {
+  background: #00c0ff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block;
+}
+nav a:hover {
+  background: #0088cc;
+}
 main {
   flex: 1;
   max-width: 1200px;
@@ -69,7 +83,7 @@ section h2 {
   color: #1e1e2f;
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  border-bottom: 3px solid #00c0ff;
+  border-bottom: 2px solid #1e1e2f;
   padding-bottom: 0.5rem;
   display: inline-block;
 }
@@ -112,6 +126,111 @@ footer {
   padding: 1.5rem;
   margin-top: auto;
 }
+
+/* Documentation specific styles */
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+  padding: 2rem;
+  gap: 2rem;
+}
+aside {
+  width: 250px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+aside input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+  outline: none;
+  font-family: 'Segoe UI', sans-serif;
+}
+aside input:focus {
+  border-color: #00c0ff;
+}
+aside ul {
+  list-style: none;
+}
+aside li {
+  margin: 0.5rem 0;
+}
+aside a {
+  text-decoration: none;
+  color: #1e1e2f;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: block;
+  padding: 0.4rem 0;
+}
+aside a:hover {
+  color: #00c0ff;
+}
+main#docs {
+  flex: 1;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+main#docs section {
+  margin-bottom: 3rem;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+main#docs section:last-child {
+  margin-bottom: 0;
+}
+.hidden {
+  display: none;
+}
+pre {
+  background: #f5f5f5;
+  padding: 0;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+pre code {
+  background: #f5f5f5;
+  display: block;
+  padding: 1.2rem;
+  border-radius: 6px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 0.95rem;
+  color: #333;
+  border-left: 4px solid #00c0ff;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+code {
+  background: #eaeaea;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 0.9rem;
+  color: #d63384;
+}
+main#docs a {
+  color: #00c0ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+main#docs a:hover {
+  text-decoration: underline;
+}
+
 @keyframes fadeIn {
   from { 
     opacity: 0; 
@@ -120,6 +239,15 @@ footer {
   to { 
     opacity: 1; 
     transform: translateY(0); 
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  aside {
+    width: 100%;
+    position: static;
   }
 }
 @media (max-width: 768px) {
