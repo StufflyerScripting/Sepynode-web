@@ -81,10 +81,11 @@ sum(6, 7);</code></pre>
         <p>Sepynode supports simple classes with constructors and member functions.</p>
         <pre><code>class Player{
     var health = 100;
-
-    operator INIT(var number=1000){
+    var name = "default";
+    operator INIT(var number=1000, var string){
         number = heatlh;
-        println << "A new player spawned with the name" c< 4;
+        name = string;
+        println << "A new player spawned with the name " + name c< 4;
     }
 
     func hit(var damage){
@@ -92,7 +93,7 @@ sum(6, 7);</code></pre>
     }
 }
 
-var gamer = Player(100);
+var gamer = Player(100, "SpottedZulu");
 gamer.hit(20);</code></pre>
         <p>Classes can have member variables and functions, and support constructors via the <code>INIT</code> operator.
         </p>
